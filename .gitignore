@@ -1,0 +1,29 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# Virtual environments
+venv/
+env/
+vllm/
+LLaMA-Factory/
+
+# Logs and temporary files
+*.log
+*.bak
+*.zip
+*.pdf
+
+# IDE/Editor files
+.vscode/
+draft/
+data/
+docs/
+
+

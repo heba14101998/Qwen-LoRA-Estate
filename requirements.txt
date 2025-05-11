@@ -1,0 +1,11 @@
+# Core libraries
+transformers==4.48.3
+datasets==3.2.0
+optimum==1.24.0
+wandb
+huggingface_hub[hf_xet]
+google-generativeai
+json-repair==0.29.1
+
+# For inference with vLLM
+vllm==0.7.2
