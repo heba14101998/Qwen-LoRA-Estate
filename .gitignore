@@ -18,12 +18,10 @@ LLaMA-Factory/
 *.log
 *.bak
 *.zip
-*.pdf
 
 # IDE/Editor files
 .vscode/
 draft/
 data/
-docs/
 
 
