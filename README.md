@@ -5,6 +5,15 @@ This project demonstrates fine-tuning the Qwen-3.0-6B model using LoRA (Low-Rank
 
 ## Project Structure
 
+<div align="center">
+  <img 
+    src="https://www.mermaidchart.com/raw/2f6404e6-2ec5-4064-887d-3fae3a3f39a6?theme=light&version=v0.1&format=svg" 
+    alt="Real Estate LLM Fine-Tuning Workflow"
+    style="max-width: 100%; height: 2000;"
+  />
+  <p><em>Figure: End-to-end fine-tuning workflow for Qwen3-0.6B</em></p>
+</div>
+
 <img src="docs/workflow-mermaid.svg"/>
 
 
