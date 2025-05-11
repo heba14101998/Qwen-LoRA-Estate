@@ -1,0 +1,62 @@
+### model metadata (config)
+model_name_or_path: Qwen/Qwen3-0.6B
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_rank: 64
+lora_target: all
+
+# Defines the dataset for training and evaluation
+dataset: real_estate_finetune_train # real_estate_sample_data
+eval_dataset: real_estate_finetune_val
+template: qwen3
+cutoff_len: 3500
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### Output Directory and Logging Configuration
+output_dir: /kaggle/working/drive/MyDrive/llm-finetuning/llama_factory_output
+logging_steps: 50
+save_steps: 200
+plot_loss: true
+overwrite_output_dir: true
+save_only_model: false
+save_safetensors: true
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 8
+learning_rate: 1.0e-4
+num_train_epochs: 3.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000
+
+### eval
+per_device_eval_batch_size: 1
+eval_strategy: steps
+eval_steps: 100
+load_best_model_at_end: true
+metric_for_best_model: eval_loss
+greater_is_better: false
+
+### logging
+report_to: wandb
+run_name: real-estate-finetune-qwen0.6B
+
+### Additional Model Saving and Hub Configuration
+push_to_hub: true
+export_hub_model_id: "heba1998/Qwen3-0.6B-real-estate-adaptor"
+hub_private_repo: true
+
+### Additional settings
+save_strategy: steps
+save_total_limit: 2
+export_device: auto
+adapter_folder: /kaggle/working/drive/MyDrive/llm-finetuning/llama_factory_output/adapters
+export_dir: /kaggle/working/drive/MyDrive/llm-finetuning/llama_factory_output/exported_models
+use_cache: false
