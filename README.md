@@ -44,11 +44,20 @@ Qwen-LoRA-Estate/
 
 ## Datasets Description
 
-- **Raw Dataset**: The raw data from [Kaggle](https://www.kaggle.com/datasets/ahmedshahriarsakib/usa-real-estate-dataset).
-- **Tabular Data**: Cleans and preprocesses the data (handling missing values, outliers, data types).
-- **Text Data**: 
-   - Translated Tabular Data to text, [kaggle link](https://www.kaggle.com/datasets/hebamo7amed/llm-real-estate-text-data/data) or [hugging face link](https://huggingface.co/datasets/heba1998/real-estate-data-for-llm-fine-tuning)
-   - LlaMa-Factory Text Data Format: [Hugging Face Link](heba1998/real-estate-data-sample-for-llm-fine-tuning)
+* **Total Records Available**: \~2,000,000
+* **Used for Fine-Tuning**:
+
+  * 5,000 training examples
+  * 200 validation examples
+
+> ⚠️ **Note**: Due to infrastructure constraints, the full dataset could not be used in this experiment. Scaling this to larger datasets is part of the future work.
+
+* **Original Dataset**: [USA Real Estate Dataset](https://www.kaggle.com/datasets/ahmedshahriarsakib/usa-real-estate-dataset)
+* **Converted Dataset**: 
+
+  * Cleans and preprocesses the data (handling missing values, outliers, data types)
+  * Translated the full \~2M dataset from tabular Data to natural language hosted in [Kaggle](https://www.kaggle.com/datasets/hebamo7amed/llm-real-estate-text-data/data) and [Hugging Face](https://huggingface.co/datasets/heba1998/real-estate-data-for-llm-fine-tuning)
+  * Refactored datasets or training and validation in LlaMa-Factory Style hosted in [Hugging Face](https://huggingface.co/datasets/heba1998/real-estate-data-sample-for-llm-fine-tuning)
 
 
 ## Usage
