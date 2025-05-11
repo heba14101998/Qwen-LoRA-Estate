@@ -1,0 +1,103 @@
+flowchart TD
+ subgraph A["**Data Preparation**"]
+        A2["🧹 Clean & Preprocess"]
+        A1["📊 USA Real Estate Dataset<br>(\~2M records)"]
+        A3["📝 Convert to Prompts"]
+        A4["🤗 Push datasets<br>(Kaggle/HF)"]
+  end
+ subgraph B["**Baseline Models**"]
+        B3["💬 Model Response"]
+        B1["👾 Pretrained<br>(Qwen3-0.6B)"]
+        B2["✨ Gemini API"]
+        B4["💰 Extract Price Predictions"]
+        B5["📈 Regression Calculate Metrics"]
+  end
+ subgraph C["**Fine-Tuning**"]
+        C5["⚙️ Fine-Tune<br>(LLaMA-Factory)"]
+        C1["🎯 YAML Config<br>(rank=64, bf16)"]
+        C2["👾 Pretrained<br>Qwen3-0.6B"]
+        C3["✨ Wandb"]
+        C6["🤗 Push Adaptor<br>(Hugging Face)"]
+        C7["💬 Model Response<br>(Qwen-LoRA-Estate)"]
+        C8["💰 Extract Price Predictions"]
+        C9["📈 Regression Calculate Metrics"]
+  end
+ subgraph D["**Model Comparison**"]
+        D5["🆚 Base vs. Fine-Tuned vs. Gemini"]
+        D1["📈 MSE"]
+        D2["📈 RMSE"]
+        D3["📈 MAE"]
+        D4["📈 R-Squared"]
+  end
+    A --> B
+    B --> C
+    C --> D
+    A1 L_A1_A2_0@--> A2
+    A2 L_A2_A3_0@--> A3
+    A3 L_A3_A4_0@--> A4
+    B1 L_B1_B3_0@--> B3
+    B2 L_B2_B3_0@--> B3
+    B3 L_B3_B4_0@--> B4
+    B4 L_B4_B5_0@--> B5
+    C1 L_C1_C5_0@--> C5
+    C2 L_C2_C5_0@--> C5
+    C3 L_C3_C5_0@--> C5
+    C5 L_C5_C6_0@--> C6
+    C6 L_C6_C7_0@--> C7
+    C7 L_C7_C8_0@--> C8
+    C8 L_C8_C9_0@--> C9
+    D1 L_D1_D5_0@--> D5
+    D2 L_D2_D5_0@--> D5
+    D3 L_D3_D5_0@--> D5
+    D4 L_D4_D5_0@--> D5
+
+     A2:::A
+     A1:::A
+     A3:::A
+     A4:::A
+     B3:::B
+     B1:::B
+     B2:::B
+     B4:::B
+     B5:::B
+     C5:::C
+     C1:::C
+     C2:::C
+     C3:::C
+     C6:::C
+     C7:::C
+     C8:::C
+     C9:::C
+     D5:::D
+     D1:::D
+     D2:::D
+     D3:::D
+     D4:::D
+    classDef A fill:#f5eef8,font-size:11px,stroke:#666,stroke-width:2px
+    classDef B fill:#f0f7ff,font-size:11px,stroke:#0066cc,stroke-width:2px
+    classDef C fill:#e6f9e6,font-size:11px,stroke:#009900,stroke-width:2px
+    classDef D fill:#fff0f0,font-size:11px,stroke:#cc0000,stroke-width:2px
+    style A stroke:#666,stroke-width:2px 
+    style B stroke:#0066cc,stroke-width:2px 
+    style C stroke:#009900,stroke-width:2px 
+    style D stroke:#cc0000,stroke-width:2px 
+
+    L_A1_A2_0@{ animation: fast } 
+    L_A2_A3_0@{ animation: fast } 
+    L_A3_A4_0@{ animation: fast } 
+    L_B1_B3_0@{ animation: fast } 
+    L_B2_B3_0@{ animation: fast } 
+    L_B3_B4_0@{ animation: fast } 
+    L_B4_B5_0@{ animation: fast } 
+    L_C1_C5_0@{ animation: fast } 
+    L_C2_C5_0@{ animation: fast } 
+    L_C3_C5_0@{ animation: fast } 
+    L_C5_C6_0@{ animation: fast } 
+    L_C6_C7_0@{ animation: fast } 
+    L_C7_C8_0@{ animation: fast } 
+    L_C8_C9_0@{ animation: fast } 
+    L_D1_D5_0@{ animation: fast } 
+    L_D2_D5_0@{ animation: fast } 
+    L_D3_D5_0@{ animation: fast } 
+    L_D4_D5_0@{ animation: fast } 
+

@@ -5,6 +5,9 @@ This project demonstrates fine-tuning the Qwen-3.0-6B model using LoRA (Low-Rank
 
 ## Project Structure
 
+<img src="docs/workflow-mermaid.svg"/>
+
+
 ```
 Qwen-LoRA-Estate/
 ├── .env                     # Environment secrets

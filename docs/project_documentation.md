@@ -6,6 +6,15 @@ This project presents the fine-tuning of the [Qwen3-0.6B](https://huggingface.co
 
 The model is trained on text-converted tabular property listings and evaluated against baseline models such as the base Qwen3-0.6B and Gemini API outputs.
 
+## Workflow & Project Structure
+
+1. **Data Preparation** → Explore, clean, and convert tabular data to prompt-based instructions
+2. **Baseline Evaluation** → Use pretrained base Qwen and Gemini as a basseline evaluation.
+3. **Fine-Tuning** → Train using LoRA with LLaMA-Factory
+4. **Model Comparasion** → Extract predictions from the generated text responses and dump them in JSON format for regression metrics comparasion between models.
+
+<img src="docs/workflow-mermaid.svg"/>
+
 
 ## Used Tools
 
@@ -26,13 +35,6 @@ The model is trained on text-converted tabular property listings and evaluated a
 * **Training GPUs**: Used Kaggle and Google Colab free GPU environments
 * **Constraints**: Due to hardware limitations, only a subset of the full dataset was used for fine-tuning.
 
-## Workflow & Project Structure
-
-
-1. **Data Preparation** → Explore, clean, and convert tabular data to prompt-based instructions
-2. **Baseline Evaluation** → Use pretrained base Qwen and Gemini as a basseline evaluation.
-3. **Fine-Tuning** → Train using LoRA with LLaMA-Factory
-4. **Model Comparasion** → Extract predictions from the generated text responses and dump them in JSON format for regression metrics comparasion between models.
 
 ## Fine-Tuning Strategy
 
