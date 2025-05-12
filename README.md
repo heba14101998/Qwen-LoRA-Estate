@@ -36,15 +36,12 @@ This evaluation results demonstrate that the fine-tuned **Qwen3-0.6B + LoRA** mo
 
 <!-- <img src="docs/workflow-mermaid.svg"/> -->
 
-
-```
+```tree
+.
 Qwen-LoRA-Estate/
-├── .env                     # Environment secrets
-|
-├── 1_Data_Exploration_and_Preprocessing.ipynb 
-├── 2_Evaluate_Base_Qwen_and_Gemini.ipynb      
-├── 3_Qwen3_0_6B_using_LoRA.ipynb              
-├── requirements.txt         # Python dependencies
+├── Data_Exploration_and_Preprocessing.ipynb 
+├── Qwen3_0_6B_using_LoRA.ipynb  
+├── Evaluate_all_Models.ipynb 
 |
 ├── data/                    # Data directory
 │   ├── tabular_data/              # Tabular data
@@ -57,22 +54,28 @@ Qwen-LoRA-Estate/
 │   │   ├── text_val_data.jsonl    
 │   ├── usa-real-estate-dataset/   # Raw dataset
 |
+|── real_estate_qwen3_lora.yaml # Configuration file for the Qwen3-0.6B model
+|
 ├── docs/    # Documentation directory
 ├── results/ # the evaluation for the base mode, gemini, and fine-tuned model using regression metrics for house price.
-
+|
+├── .env                     # Environment secrets
+├── .gitignore               # Git ignore file
+├── README.md                # Project overview
+├── LICENSE                  # License information
+├── requirements.txt         # Python dependencies
 ```
 
 ## Notebooks
 
-1. **1_Data_Exploration_and_Preprocessing.ipynb**  
+1. **Data_Exploration_and_Preprocessing.ipynb**  
     This notebook explores the USA Real Estate dataset, checks for inconsistencies, and outlines a plan to prepare it as natural language data for LLM fine-tuning. Text Data generated from this notebook in [Kaggle](https://www.kaggle.com/datasets/hebamo7amed/llm-real-estate-text-data/data) and [Hugging Face](https://huggingface.co/datasets/heba1998/real-estate-data-for-llm-fine-tuning)
 
-2. **2_Evaluate_Base_Qwen_and_Gemini.ipynb**  
-
-   Evaluate the performance of the pretrained base **`Qwen3-0.6B`** model and **`Gemini API`** models on the dataset in order to compare them with the finetuned **`Qwen3-0.6B`** model.
-
-3. **3_Qwen3_0_6B_using_LoRA.ipynb**  
+2. **Qwen3_0_6B_using_LoRA.ipynb**  
    Fine-tune the **`Qwen3-0.6B`** model using [LoRA](https://arxiv.org/abs/2106.09685) with the **LLaMA-Factory** framework. The goal is to adapt the model for real estate-specific tasks, such as predicting house prices based on structured and natural language data.
+
+3. **Evaluate_all_Models.ipynb**  
+   Evaluate the performance of **`Gemini API`** API, the pretrained base **`Qwen3-0.6B`** model and our fine-tuned **`Qwen3-0.6B + LoRA`** models on the dataset in order to compare them with the finetuned **`Qwen3-0.6B + LoRA`** model. The evaluation metrics include Mean Absolute Error (MAE) and R-Squared (R²) to assess the model's predictive accuracy and goodness of fit. The notebook also provides visualizations of the results for better interpretation.
 
 ## Datasets Description
 
