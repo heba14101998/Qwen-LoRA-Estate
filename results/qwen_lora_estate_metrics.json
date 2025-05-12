@@ -1,0 +1,12 @@
+{
+    "MSE": 273433155978.25,
+    "RMSE": 522908.3628880399,
+    "MAE": 239957.21,
+    "R2": 0.01794015221087597,
+    "n_samples": 200,
+    "eval_time (min)": 2.82,
+    "response_time (min)": 0.0141,
+    "eval_device": "gpu-t4x2",
+    "model_name": "Qwen3-lora-estate-0.6B",
+    "missing_pred(%)": 0.0
+}

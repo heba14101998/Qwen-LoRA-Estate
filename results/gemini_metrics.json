@@ -2,5 +2,11 @@
     "MSE": 404732979411.82,
     "RMSE": 636186.2772897731,
     "MAE": 390199.94,
-    "R2": -0.4536350090185375
+    "R2": -0.4536350090185375,
+    "n_samples": 200,
+    "eval_time (min)": 2.45,
+    "response_time (min)": 0.01225,
+    "missing_pred(%)": 70,
+    "eval_device": "remote-api",
+    "model_name": "gemini-2.0-flash-exp"
 }

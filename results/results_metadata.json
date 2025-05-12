@@ -1,5 +1,0 @@
-{
-    "Description": "Here is the time taken to predict 200 samples for the base models",
-    "Qwen Base (min)": 2.45,
-    "Gemini (min)": 19.96
-}
