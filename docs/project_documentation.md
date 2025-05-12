@@ -131,7 +131,7 @@ The evaluation results demonstrate that the fine-tuned **Qwen3-0.6B + LoRA** mod
   <img 
     src="../results/qwen_3panel_comparison.png" 
     alt="Model Comparison Plot"
-    style="width: 700; height: 300;"
+    style="width: 700; height: 280;"
   />
   <p><em>Figure: Performance Comparison of our Qwen-LoRA over the other Evaluated Models</em></p>
 </div>

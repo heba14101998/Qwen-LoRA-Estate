@@ -5,19 +5,19 @@ This project demonstrates fine-tuning the Qwen-3.0-6B model using LoRA (Low-Rank
 
 ## Evaluation Results
 
-This evaluation results demonstrate that the fine-tuned **Qwen3-0.6B + LoRA** model significantly outperforms both the base **Qwen3-0.6B** and **Gemini2-flash-exp** models in terms of **MAE** and **R-Squared**, despite being trained on only **5,000** samples and evaluated on a small validation set of **200** samples.
+This evaluation results demonstrate that the fine-tuned **Qwen3-0.6B + LoRA** model significantly outperforms both the base **Qwen3-0.6B** and **Gemini2-flash** models in terms of **MAE** and **R-Squared**, despite being trained on only **5,000** samples and evaluated on a small validation set of **200** samples.
 
 | **Model Name**         | **MAE**       | **R-Squared**       | **Supports** | **Eval Time (min)** | **Response Time (min)** | **Missing Predictions (%)** | **Validation Device** |
 |-------------------------|---------------|---------------------|--------------|---------------------|-------------------------|-----------------------------|------------------------|
-| **Gemini2-flash-exp**   | 403870.53     | -0.5416020237160029 | 200          | 2.82                | 0.0141                  | 0.0                         | gpu-t4x2              |
-| **Base Qwen3-0.6B**     | 390199.94     | -0.4536350090185375 | 200          | 2.45                | 0.01225                 | 70.0                        | remote-api            |
-| **Qwen3-0.6B + LoRA**   | 198903.515    | 0.40409901976362583 | 200          | 2.82                | 0.0141                  | 0.0                         | gpu-t4x2              |
+| **Gemini2-flash**   | 403870.53     | -0.5416020237160029 | 200          | 2.82                | 0.0141                  | 0.0                         | gpu-t4x2              |
+| **Qwen3-0.6B**     | 390199.94     | -0.4536350090185375 | 200          | 2.45                | 0.01225                 | 70.0                        | remote-api            |
+| **Qwen3-LoRA-Estate**   | 198903.515    | 0.40409901976362583 | 200          | 2.82                | 0.0141                  | 0.0                         | gpu-t4x2              |
 
 <div align="center">
   <img 
     src="results/qwen_3panel_comparison.png" 
     alt="Model Comparison Plot"
-    style="width: 700; height: 300;"
+    style="width: 700; height: 270;"
   />
   <p><em>Figure: Performance Comparison of our Qwen-LoRA over the other Evaluated Models</em></p>
 </div>
