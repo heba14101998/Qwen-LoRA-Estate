@@ -3,6 +3,18 @@
 
 This project demonstrates fine-tuning the Qwen-3.0-6B model using LoRA (Low-Rank Adaptation) for real estate data. It includes data exploration, preprocessing, evaluation of base models, and fine-tuning workflows.
 
+## Project WorkFlow
+
+<div align="center">
+  <img 
+    src="docs/workflow-mermaid.svg" 
+    alt="Real Estate LLM Fine-Tuning Workflow"
+    style="width: 550; height: 700;"
+  />
+  <p><em>Figure: End-to-end fine-tuning workflow for Qwen3-0.6B</em></p>
+</div>
+
+
 ## Evaluation Results
 
 This evaluation results demonstrate that the fine-tuned **Qwen3-0.6B + LoRA** model significantly outperforms both the base **Qwen3-0.6B** and **Gemini2-flash** models in terms of **MAE** and **R-Squared**, despite being trained on only **5,000** samples and evaluated on a small validation set of **200** samples.
@@ -25,16 +37,6 @@ This evaluation results demonstrate that the fine-tuned **Qwen3-0.6B + LoRA** mo
 
 ## Project Structure
 
-<div align="center">
-  <img 
-    src="docs/workflow-mermaid.svg" 
-    alt="Real Estate LLM Fine-Tuning Workflow"
-    style="width: 800; height: 1000;"
-  />
-  <p><em>Figure: End-to-end fine-tuning workflow for Qwen3-0.6B</em></p>
-</div>
-
-<!-- <img src="docs/workflow-mermaid.svg"/> -->
 
 ```tree
 .
