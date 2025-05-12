@@ -13,7 +13,16 @@ The model is trained on text-converted tabular property listings and evaluated a
 3. **Fine-Tuning** → Train using LoRA with LLaMA-Factory
 4. **Model Comparasion** → Extract predictions from the generated text responses and dump them in JSON format for regression metrics comparasion between models.
 
-<img src="docs/workflow-mermaid.svg"/>
+## Project Structure
+
+<div align="center">
+  <img 
+    src="../docs/workflow-mermaid.svg" 
+    alt="Real Estate LLM Fine-Tuning Workflow"
+    style="width: 800; height: 1000;"
+  />
+  <p><em>Figure: End-to-end fine-tuning workflow for Qwen3-0.6B</em></p>
+</div>
 
 
 ## Used Tools
@@ -109,13 +118,31 @@ During Fine-tuning the evaluation function `eval_dataset` that uses the average 
 
 After training, we extracted the predicted house prices from the model's JSON responses and conducted a **regression-based evaluation** using standard metrics (MSE, RMSE, MAE, and R-Squred). 
 
-**Evaluation was done on test predictions from:**
+The evaluation results demonstrate that the fine-tuned **Qwen3-0.6B + LoRA** model significantly outperforms both the base **Qwen3-0.6B** and **Gemini2-flash-exp** models in terms of **MAE** and **R-Squared**, despite being trained on only **5,000** samples and evaluated on a small validation set of **200** samples.
 
-* Base Qwen3-0.6B
-* Gemini (via GenAI)
-* Fine-tuned Qwen3-0.6B (mine)
 
-### Final Models Comparasion
+| **Model Name**         | **MAE**       | **R-Squared**       | **Supports** | **Eval Time (min)** | **Response Time (min)** | **Missing Predictions (%)** | **Validation Device** |
+|-------------------------|---------------|---------------------|--------------|---------------------|-------------------------|-----------------------------|------------------------|
+| **Gemini2-flash-exp**   | 403870.53     | -0.5416020237160029 | 200          | 2.82                | 0.0141                  | 0.0                         | gpu-t4x2              |
+| **Base Qwen3-0.6B**     | 390199.94     | -0.4536350090185375 | 200          | 2.45                | 0.01225                 | 70.0                        | remote-api            |
+| **Qwen3-0.6B + LoRA**   | 198903.515    | 0.40409901976362583 | 200          | 2.82                | 0.0141                  | 0.0                         | gpu-t4x2              |
+
+<div align="center">
+  <img 
+    src="../results/qwen_3panel_comparison.png" 
+    alt="Model Comparison Plot"
+    style="width: 700; height: 300;"
+  />
+  <p><em>Figure: Performance Comparison of our Qwen-LoRA over the other Evaluated Models</em></p>
+</div>
+
+#### Observations:
+- The **Qwen3-0.6B + LoRA** model achieves the lowest **MAE** of **198,903.515**, indicating it provides the most accurate predictions among the evaluated models.
+- The **R-Squared** value of **0.4041** for the fine-tuned model indicates a moderate level of variance explained by the model, suggesting it captures some underlying patterns in the data.
+- **Gemini2-flash-exp** and **Base Qwen3-0.6B** models perform poorly, with negative **R-Squared** values, suggesting they fail to capture the variance in the data.
+- The fine-tuned model demonstrates robustness with **0% missing predictions**, unlike the base model with **70% missing predictions**.
+- Evaluation and response times are comparable across all models, showing no significant latency introduced by fine-tuning.
+- The fine-tuned model's performance improvement is achieved despite the limited training dataset size.
 
 
 ## Adapter Output

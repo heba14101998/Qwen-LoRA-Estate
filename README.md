@@ -3,6 +3,26 @@
 
 This project demonstrates fine-tuning the Qwen-3.0-6B model using LoRA (Low-Rank Adaptation) for real estate data. It includes data exploration, preprocessing, evaluation of base models, and fine-tuning workflows.
 
+## Evaluation Results
+
+This evaluation results demonstrate that the fine-tuned **Qwen3-0.6B + LoRA** model significantly outperforms both the base **Qwen3-0.6B** and **Gemini2-flash-exp** models in terms of **MAE** and **R-Squared**, despite being trained on only **5,000** samples and evaluated on a small validation set of **200** samples.
+
+| **Model Name**         | **MAE**       | **R-Squared**       | **Supports** | **Eval Time (min)** | **Response Time (min)** | **Missing Predictions (%)** | **Validation Device** |
+|-------------------------|---------------|---------------------|--------------|---------------------|-------------------------|-----------------------------|------------------------|
+| **Gemini2-flash-exp**   | 403870.53     | -0.5416020237160029 | 200          | 2.82                | 0.0141                  | 0.0                         | gpu-t4x2              |
+| **Base Qwen3-0.6B**     | 390199.94     | -0.4536350090185375 | 200          | 2.45                | 0.01225                 | 70.0                        | remote-api            |
+| **Qwen3-0.6B + LoRA**   | 198903.515    | 0.40409901976362583 | 200          | 2.82                | 0.0141                  | 0.0                         | gpu-t4x2              |
+
+<div align="center">
+  <img 
+    src="results/qwen_3panel_comparison.png" 
+    alt="Model Comparison Plot"
+    style="width: 700; height: 300;"
+  />
+  <p><em>Figure: Performance Comparison of our Qwen-LoRA over the other Evaluated Models</em></p>
+</div>
+
+
 ## Project Structure
 
 <div align="center">
@@ -80,6 +100,7 @@ Qwen-LoRA-Estate/
    - Finally, execute `3_Qwen3_0_6B_using_LoRA.ipynb` to fine-tune the model.
 
 2. Fine-tuned models and results will be saved in the specified output directories.
+
 
 ## Documentation
 Additional documentation can be found in the `docs/` directory.

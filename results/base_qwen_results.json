@@ -1,0 +1,16 @@
+{
+    "MSE": 429225476997.24,
+    "RMSE": 655153.0180020848,
+    "MAE": 403870.53,
+    "R2": -0.5416020237160029,
+    "n_samples": 200,
+    "eval_time (min)": 2.82,
+    "response_time (min)": 0.0141,
+    "eval_device": "gpu-t4x2",
+    "model_name": "Qwen3-0.6B",
+    "in_token_limit": "~32K",
+    "out_token_limit": "~8",
+    "n_params": "0.8B (600M)",
+    "size": "~1.5 GB",
+    "missing_pred(%)": 0
+}

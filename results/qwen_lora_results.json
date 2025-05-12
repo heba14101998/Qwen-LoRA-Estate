@@ -1,0 +1,16 @@
+{
+    "MSE": 165915637466.885,
+    "RMSE": 407327.43274530995,
+    "MAE": 198903.515,
+    "R2": 0.40409901976362583,
+    "n_samples": 200,
+    "eval_time (min)": 2.82,
+    "response_time (min)": 0.0141,
+    "eval_device": "gpu-t4x2",
+    "model_name": "Qwen-LoRA-Estate",
+    "in_token_limit": "~32K",
+    "out_token_limit": "~8",
+    "n_params": "0.8B (600M)",
+    "size": "~1.5 GB + 160M",
+    "missing_pred(%)": 0.0
+}
